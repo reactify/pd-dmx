@@ -1,0 +1,83 @@
+#N canvas 226 45 709 604 10;
+#X obj 50 412 bng 45 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X msg 246 193 brightness \$1;
+#X msg 345 263 time \$1;
+#X msg 173 104 on \$1;
+#X obj 173 68 tgl 25 0 empty empty empty 17 7 0 10 -204786 -1 -1 1
+1;
+#X obj 246 140 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262130
+-1 -1 3900 1;
+#X text 263 169 0;
+#X text 263 134 1;
+#X floatatom 345 236 5 0 0 0 - - -;
+#X msg 420 423 colour \$1 \$2 \$3;
+#X obj 420 396 pack f f f;
+#X obj 420 314 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 3900 1;
+#X text 437 343 0;
+#X obj 472 314 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204786
+-1 -1 3900 1;
+#X text 489 343 0;
+#X obj 472 366 t b f;
+#X obj 532 314 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 0 1;
+#X text 549 343 0;
+#X obj 532 366 t b f;
+#X text 437 308 255;
+#X text 489 308 255;
+#X text 549 308 255;
+#X text 423 291 R;
+#X text 474 291 G;
+#X text 534 291 B;
+#X text 219 85 Enables the object;
+#X text 280 152 Sets the brightness;
+#X text 393 236 Time taken for the flash;
+#X text 579 328 Set the colour;
+#X obj 50 473 DMX-colour-flash-down;
+#N canvas 0 22 321 194 test 0;
+#X obj 70 49 r red;
+#X obj 120 49 r green;
+#X obj 180 49 r blue;
+#X obj 70 79 line;
+#X obj 120 79 line;
+#X obj 180 79 line;
+#X obj 70 109 outlet;
+#X obj 120 109 outlet;
+#X obj 180 109 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X restore 50 510 pd test;
+#X obj 50 529 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 0 1;
+#X obj 66 529 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204786
+-1 -1 0 1;
+#X obj 82 529 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 0 1;
+#X text 196 9 DMX-colour-flash-down flashes the lamp to a given colour
+(default=red) and then back to 'off' in a given amount of time (default=1000ms).
+;
+#X text 48 390 Bang here to flash;
+#X connect 0 0 29 0;
+#X connect 1 0 29 1;
+#X connect 2 0 29 1;
+#X connect 3 0 29 1;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 29 1;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 15 0;
+#X connect 15 0 10 0;
+#X connect 15 1 10 1;
+#X connect 16 0 18 0;
+#X connect 18 0 10 0;
+#X connect 18 1 10 2;
+#X connect 30 0 31 0;
+#X connect 30 1 32 0;
+#X connect 30 2 33 0;

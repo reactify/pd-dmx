@@ -1,0 +1,55 @@
+#N canvas 226 45 616 507 10;
+#X msg 180 240 brightness \$1;
+#X msg 50 68 on \$1;
+#X obj 50 32 tgl 25 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
+;
+#X obj 180 187 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262130
+-1 -1 3900 1;
+#X text 197 216 0;
+#X text 197 181 1;
+#X msg 230 392 colour \$1 \$2 \$3;
+#X obj 230 365 pack f f f;
+#X obj 230 283 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 3900 1;
+#X text 247 312 0;
+#X obj 282 283 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204786
+-1 -1 3900 1;
+#X text 299 312 0;
+#X obj 282 335 t b f;
+#X obj 342 283 vsl 15 40 0 255 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 3900 1;
+#X text 359 312 0;
+#X obj 342 335 t b f;
+#X text 247 277 255;
+#X text 299 277 255;
+#X text 359 277 255;
+#X text 233 260 R;
+#X text 284 260 G;
+#X text 344 260 B;
+#X text 96 49 Enables the object;
+#X text 214 199 Sets the brightness;
+#X text 389 297 Set the colour;
+#X obj 50 422 DMX-strobe;
+#X obj 107 104 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 500 1;
+#X text 124 133 0;
+#X text 124 98 1;
+#X msg 107 157 speed \$1;
+#X text 141 116 Sets the strobing speed;
+#X text 142 -6 DMX-strobe sets the colour and speed of the strobe function
+;
+#X connect 0 0 25 1;
+#X connect 1 0 25 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 6 0 25 1;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 12 0;
+#X connect 12 0 7 0;
+#X connect 12 1 7 1;
+#X connect 13 0 15 0;
+#X connect 15 0 7 0;
+#X connect 15 1 7 2;
+#X connect 26 0 29 0;
+#X connect 29 0 25 1;
